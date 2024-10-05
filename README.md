@@ -26,7 +26,7 @@ Reference: [Asciidoctor Docs](https://docs.asciidoctor.org/)
 - [Official repository](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
 
 > [!NOTE]
-> gradlew: 特定のversionのGradleを作るためのもの。今回の場合はDockerのgradle imageを使っているため作っていない。
+> gradlew: 特定のversionのGradleを作るためのもの。今回の場合はDockerのgradle imageを使っているためGradleのversionは固定だが，GitHub Actionsで実行することを見据えて追加した。
 > 
 > ```shell
 >  # 作成
