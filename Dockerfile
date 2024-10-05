@@ -1,23 +1,13 @@
-# Build Image
-# FIXME: image name should be changed to the correct one
-FROM node:20 AS build
-# WORKDIR /app
-COPY . .
-RUN echo "Building the app"
+FROM gradle:8.10.2-jdk17-jammy AS devcontainer
+WORKDIR /app
 
+RUN apt-get update -y
 
-# Product Image
-# FIXME: image name should be changed to the correct one
-FROM public.ecr.aws/eks-distro-build-tooling/eks-distro-minimal-base-nginx:latest-al23
-
-USER root
-RUN <<EOF
-echo "Installing app"
-echo "Done"
+RUN <<EOF bash -ex
+apt-get install -y --no-install-recommends asciidoctor
+rm -rf /var/lib/lists
 EOF
 
-# COPY --from=build /app/build /usr/share/nginx/html
 
-# EXPOSE 8080
-# USER nginx
-# CMD ["nginx", "-g", "daemon off;"]
+#CMD ["asciidoctor", "--trace", "--destination-dir", "/app/src/docs/html", "/app/src/docs/asciidoc/*.adoc"]
+CMD ["gradle", "asciidoctor"]
