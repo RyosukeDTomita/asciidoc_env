@@ -1,13 +1,10 @@
-<!-- FIXME title -->
 # APP NAME
 
-<!--![un license](https://img.shields.io/github/license/RyosukeDTomita/<your-repository>)-->
+![un license](https://img.shields.io/github/license/RyosukeDTomita/asciidoc_env)
 
 ## INDEX
 
 - [ABOUT](#about)
-- [LICENSE](#license)
-- [ENVIRONMENT](#environment)
 - [PREPARING](#preparing)
 - [HOW TO USE](#how-to-use)
 
@@ -15,22 +12,17 @@
 
 ## ABOUT
 
----
+Try to use AsciiDoc example.
 
-## LICENSE
-
----
-
-<!-- NOLICENSE or MIT? -->
-[FIXME](./LICENSE)
-
----
-
-## ENVIRONMENT
+Reference: [Asciidoctor Docs](https://docs.asciidoctor.org/)
 
 ---
 
 ## PREPARING
+
+```shell
+
+```
 
 ---
 

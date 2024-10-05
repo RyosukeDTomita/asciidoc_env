@@ -1,13 +1,10 @@
-version: '3'
-
 services:
-  react-app: # FIXME
+  asciidoc_app:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: react-img-prod:latest # FIXME
-    container_name: react-container-prod # FIXME
-    # ports:
-    #   - 80:8080 # localport:dockerport
-    # volumes:
-    #   - ./:/app
+    image: asciidoc_img:latest
+    container_name: asciidoc_container
+    # NOTE: localに生成したhtmlを反映するために必要
+    volumes:
+      - ./:/app
