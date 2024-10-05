@@ -1,12 +1,13 @@
-FROM openjdk:24-ea-17-jdk-slim-bullseye AS devcontainer
+FROM gradle:8.10.2-jdk17-jammy AS devcontainer
 WORKDIR /app
 
 RUN apt-get update -y
 
 RUN <<EOF bash -ex
-apt-get install -y --no-install-recommends asciidoctor=2.0.12-2 gradle=4.4.1-13
+apt-get install -y --no-install-recommends asciidoctor
 rm -rf /var/lib/lists
 EOF
 
 
-CMD ["asciidoctor", "--trace", "--destination-dir", "/app/src/docs/html", "/app/src/docs/asciidoc/*.adoc"]
+#CMD ["asciidoctor", "--trace", "--destination-dir", "/app/src/docs/html", "/app/src/docs/asciidoc/*.adoc"]
+CMD ["gradle", "asciidoctor"]

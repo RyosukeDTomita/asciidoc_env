@@ -5,6 +5,7 @@
 ## INDEX
 
 - [ABOUT](#about)
+- [ENVIRONMENT](#environment)
 - [PREPARING](#preparing)
 - [HOW TO USE](#how-to-use)
 
@@ -18,14 +19,53 @@ Reference: [Asciidoctor Docs](https://docs.asciidoctor.org/)
 
 ---
 
+## ENVIRONMENT
+
+### asciidoctor gradle plugin
+- [asciidoctor-gradle-glugin guide](https://asciidoctor.github.io/asciidoctor-gradle-plugin/master)
+- [Official repository](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
+
+> [!NOTE]
+> gradlew: 特定のversionのGradleを作るためのもの。今回の場合はDockerのgradle imageを使っているため作っていない。
+> 
+> ```shell
+>  # 作成
+>  gradle wrapper
+>  # 削除
+>  rm gradlew
+>  rm gradlew.bat
+>  rm -rf gradle/wrapper/
+>  ```
+
+---
+
 ## PREPARING
 
-```shell
+1. install VSCode, Docker
+2. install VSCode Extensions `Dev Container`
 
-```
 
 ---
 
 ## HOW TO USE
+
+### just build html
+
+```shell
+docker buildx bake
+docker compose up
+```
+
+### use asciidoc env
+
+Open this repository and `Rebuild and Reopen in Container`
+
+```shell
+# create html
+gradle asciidoctor
+
+# delete html
+gradle clean
+```
 
 ---

@@ -1,0 +1,16 @@
+plugins {
+    id 'org.asciidoctor.jvm.convert' version '4.0.2'
+}
+
+repositories {
+    mavenCentral()
+}
+
+clean {
+  delete fileTree('src/docs/html')
+}
+
+asciidoctor {
+  baseDir  file('src/docs/asciidoc')
+  outputDir  file('src/docs/html')
+}
