@@ -1,4 +1,4 @@
-# APP NAME
+# Asciidoc Edit Environment (Dev Contaienr)
 
 ![un license](https://img.shields.io/github/license/RyosukeDTomita/asciidoc_env)
 
@@ -13,7 +13,7 @@
 
 ## ABOUT
 
-Try to use AsciiDoc example.
+tiny asciidoc sample.
 
 Reference: [Asciidoctor Docs](https://docs.asciidoctor.org/)
 
@@ -44,7 +44,6 @@ Reference: [Asciidoctor Docs](https://docs.asciidoctor.org/)
 1. install VSCode, Docker
 2. install VSCode Extensions `Dev Container`
 
-
 ---
 
 ## HOW TO USE
@@ -56,7 +55,7 @@ docker buildx bake
 docker compose up
 ```
 
-### use asciidoc env
+### use asciidoc Dev Container
 
 Open this repository and `Rebuild and Reopen in Container`
 
