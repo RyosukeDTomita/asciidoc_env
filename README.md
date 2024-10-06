@@ -22,6 +22,9 @@ Reference: [Asciidoctor Docs](https://docs.asciidoctor.org/)
 ## ENVIRONMENT
 
 ### asciidoctor gradle plugin
+
+Gradleでbuildすることでasciidoctorでビルドするよりもライブラリの管理や依存関係の設定が楽になる。
+
 - [asciidoctor-gradle-glugin guide](https://asciidoctor.github.io/asciidoctor-gradle-plugin/master)
 - [Official repository](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
 
@@ -36,6 +39,11 @@ Reference: [Asciidoctor Docs](https://docs.asciidoctor.org/)
 >  rm gradlew.bat
 >  rm -rf gradle/wrapper/
 >  ```
+
+### PlantUML
+- PlantUMLで図を生成するためにはlibXext.so.6が必要。Dockerfileにaptで追加している。
+- Asciidocに直接`.pu`ファイルを埋め込んでいる。
+  - [asciidoctor-diagram](https://docs.asciidoctor.org/gradle-plugin/latest/asciidoctor-diagram/)が必要(build.gradleに記載)
 
 ---
 

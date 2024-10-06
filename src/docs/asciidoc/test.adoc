@@ -1,10 +1,15 @@
-= The Dangers of Wolpertingers
-:url-wolpertinger: https://en.wikipedia.org/wiki/Wolpertinger
+= The test asciidoc
+:asciidoc-guide-gradle-plugin: https://asciidoctor.github.io/asciidoctor-gradle-plugin/master/
 
-Don't worry about gumberoos or splintercats.
-Something far more fearsome plagues the days, nights, and inbetweens.
-Wolpertingers.
+Asciidocを使ってみる。
 
-== Origins
+== Introduction
 
-Wolpertingers are {url-wolpertinger}[ravenous beasts].
+{asciidoc-guide-gradle-plugin}[公式ページ]
+
+== diagram
+
+[plantuml,plantuml_test,svg]
+----
+include::../diagram/pu/plantuml_test.pu[]
+----
