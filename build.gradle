@@ -7,10 +7,20 @@ repositories {
 }
 
 clean {
-  delete fileTree('src/docs/html')
+  delete fileTree('build/docs/html')
 }
 
 asciidoctor {
   baseDir  file('src/docs/asciidoc')
-  outputDir  file('src/docs/html')
+  outputDir  file('build/docs/html')
 }
+// PlantUML用(直接 gradle asciidoctorjで実行しない)
+asciidoctorj {
+  modules {
+    diagram.use()
+    diagram.version '2.3.1'
+  }
+  attributes "source-highlighter" : "rouge"
+}
+// `gradle`でコンパイルするためのエイリアス
+defaultTasks 'asciidoctor'
