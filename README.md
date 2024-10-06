@@ -56,6 +56,8 @@ Gradleでbuildすることでasciidoctorでビルドするよりもライブラ�
 
 ## HOW TO USE
 
+html and svg (created with PlantUML) are stored under `build/`.
+
 ### just build html
 
 ```shell
