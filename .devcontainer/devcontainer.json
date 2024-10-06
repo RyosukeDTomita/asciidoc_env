@@ -16,7 +16,8 @@
         "exiasr.hadolint",
         "oderwat.indent-rainbow",
         "ionutvmi.path-autocomplete",
-        "asciidoctor.asciidoctor-vscode"
+        "asciidoctor.asciidoctor-vscode",
+        "jebbs.plantuml"
       ]
     }
   }
