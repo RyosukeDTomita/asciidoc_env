@@ -1,4 +1,6 @@
 # Dockerでビルドしたasciidocのhtmlをgithub-pagesにホストする
+# NOTE: https://github.com/RyosukeDTomita/asciidoc_env/settings/pagesからBuild and deploymentをGithub Actionsに変更
+# https://github.com/RyosukeDTomita/asciidoc_env/settings/environments/ からfeature/github-pagesを追加
 on:
   push:
     branches:
