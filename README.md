@@ -41,9 +41,20 @@ Gradleでbuildすることでasciidoctorでビルドするよりもライブラ�
 >  ```
 
 ### PlantUML
+
 - PlantUMLで図を生成するためにはlibXext.so.6が必要。Dockerfileにaptで追加している。
 - Asciidocに直接`.pu`ファイルを埋め込んでいる。
   - [asciidoctor-diagram](https://docs.asciidoctor.org/gradle-plugin/latest/asciidoctor-diagram/)が必要(build.gradleに記載)
+
+### GitHub Pages
+
+作成したAsciiDocをgithubでホストする。
+例: https://ryosukedtomita.github.io/asciidoc_env/test.html
+
+#### 初期設定
+
+- [リポジトリの設定](https://github.com/RyosukeDTomita/asciidoc_env/settings/pages)からBuild and deploymentをGithub Actionsに変更
+- [リポジトリの環境変数設定](https://github.com/RyosukeDTomita/asciidoc_env/settings/environments/)からfeature/github-pagesを追加
 
 ---
 
