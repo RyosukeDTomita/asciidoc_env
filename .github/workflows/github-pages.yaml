@@ -4,7 +4,7 @@
 on:
   push:
     branches:
-      - master
+      - main
       - feature/github-pages
   workflow_dispatch:
 
