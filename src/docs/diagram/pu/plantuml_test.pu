@@ -1,4 +1,16 @@
 @startuml conversation
 title PlantUML test
-Bob->Alice : Hello!
+box #DodgerBlue
+participant "ユーザ\n端末\n" as ユーザ端末
+end box
+
+box #LightBlue
+participant "サーバ" as サーバ
+
+ユーザ端末 -> サーバ : ログイン試行
+
+opt 該当ユーザが存在しない
+  ユーザ端末 <- サーバ : ID，パスワードが間違っている旨を返して終了
+end
+
 @enduml
