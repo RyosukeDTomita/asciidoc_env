@@ -8,6 +8,7 @@
 - [ENVIRONMENT](#environment)
 - [PREPARING](#preparing)
 - [HOW TO USE](#how-to-use)
+- [ERROR LOG](#error-log)
 
 ---
 
@@ -89,3 +90,11 @@ gradle clean
 ```
 
 ---
+
+## ERROR LOG
+
+### PlantUMLの日本語が重なる
+
+Dev Containerに日本語フォントが入っていないのが原因。[素晴らしいQiita](https://qiita.com/yomon8/items/a3e016b7ffc3e4fbb7e5)
+
+
