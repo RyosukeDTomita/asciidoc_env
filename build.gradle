@@ -6,15 +6,15 @@ repositories {
     mavenCentral()
 }
 
-clean {
-  delete fileTree('build/docs/html')
-}
+// NOTE: Gradleにはデフォルトでcleanタスクが存在し、build/を削除可能
 
+// NOTE: asciidoctorタスクはplugin側で定義されているのでタスクの定義不要
 asciidoctor {
   baseDir  file('src/docs/asciidoc')
   outputDir  file('build/docs/html')
 }
-// PlantUML用(直接 gradle asciidoctorjで実行しない)
+
+// asciidoctorから呼び出され、図等を埋め込む
 asciidoctorj {
   modules {
     diagram.use()
@@ -22,5 +22,14 @@ asciidoctorj {
   }
   attributes "source-highlighter" : "rouge"
 }
+
+// NOTE: `gradle asciidoctor`実行時に.svgファイルがあると更新されないため削除する
+task cleanPlantUML(type: Delete) {
+  delete fileTree('build/docs/html/') {
+    include '**/*.svg'
+  }
+}
+asciidoctor.dependsOn cleanPlantUML
+
 // `gradle`でコンパイルするためのエイリアス
 defaultTasks 'asciidoctor'
