@@ -13,9 +13,14 @@ Asciidocを使ってみる。
 
 {asciidoc-guide-gradle-plugin}[公式ページ]
 
-== diagram
+== sample diagram
 
-[plantuml,plantuml_test,svg]
+[plantuml,sequence_sample,svg]
 ----
-include::../diagram/pu/plantuml_test.pu[]
+include::../diagram/pu/sequence_sample.pu[]
+----
+
+[plantuml,flowchart_sample,svg]
+----
+include::../diagram/pu/flowchart_sample.pu[]
 ----
