@@ -1,6 +1,6 @@
 = The test asciidoc
 // 出力されるpdfにVersion unspecifiedにならないようにversionを指定
-:revnumber: 0.1.0
+:revnumber: {version}
 :sectnums: // 見出しに番号をつける
 :asciidoc-guide-gradle-plugin: https://asciidoctor.github.io/asciidoctor-gradle-plugin/master/
 // 目次
