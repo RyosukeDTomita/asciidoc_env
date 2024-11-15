@@ -1,0 +1,48 @@
+@startuml
+
+' 通常の枠線
+skinparam ActivityBorderColor #999999 
+' 条件分岐の枠線
+skinparam ActivityDiamondBorderColor #999999 # 条件分岐等の枠線
+'矢印
+skinparam ArrowColor #00BBFF
+' ノードの背景色
+skinparam ActivityBackgroundColor #EEEEEE
+
+title パスワードリセットフロー
+
+' if等の一部の構文はシーケンス図では使えない
+start
+
+!procedure $insert_mail()
+:ユーザはメールアドレス\nを再入力する;
+:秘密の質問に解答;
+!endprocedure
+
+:ユーザはメールアドレスを入力し\nパスワードリセットをリクエスト;
+if (ユーザが存在するか？) then (yes)
+  :ユーザにパスワードリセットメールを送信;
+  '前判定
+  while (メール送信失敗回数が3回未満か?) is (yes)
+    if (メール送信成功？) then (yes)
+      :ユーザにメール送信完了を通知;
+      end
+    else (no)
+      :ユーザにメール送信失敗を通知;
+      $insert_mail()
+    endif
+  endwhile (no)
+  stop
+else (no)
+  '後判定も使ってみたかった
+  repeat
+    :ユーザにメール送信失敗を通知;
+    floating note left : ユーザが存在しないことが\n露呈しないよう\nユーザ存在時と同じ応答を返す
+    $insert_mail()
+  repeat while (メール送信失敗回数が3回以下か?) is (yes)
+  stop
+endif
+
+
+
+@endumlenduml

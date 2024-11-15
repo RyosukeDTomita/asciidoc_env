@@ -1,0 +1,36 @@
+@startuml conversation
+title PlantUML test
+box #DodgerBlue
+participant "ユーザ\n端末\n" as ユーザ端末
+end box
+
+box #LightBlue
+participant "サーバ" as サーバ
+
+group ログイン
+  ユーザ端末 -> サーバ : ID/passwordでログイン試行
+
+  alt 該当ユーザが存在しない
+    ユーザ端末 <- サーバ : 401 Unauthorized\nID，パスワードが間違っているエラー
+  else パスワードが間違っている
+    ユーザ端末 <- サーバ : 401 Unauthorized\nID，パスワードが間違っているエラー
+  else ログイン成功
+    ユーザ端末 <- サーバ : 200 OK
+  end
+end
+
+group ショッピング
+  ユーザ端末 -> サーバ : 商品一覧取得
+  ユーザ端末 <- サーバ : 商品一覧
+  opt 商品を選択
+    ユーザ端末 -> サーバ : 商品詳細取得
+    ユーザ端末 <- サーバ : 商品詳細
+  end
+end
+
+group 決済処理
+  ユーザ端末 -> サーバ : 決済処理
+  ユーザ端末 <- サーバ : 決済結果
+end
+
+@enduml
