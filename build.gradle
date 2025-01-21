@@ -12,7 +12,8 @@ repositories {
 asciidoctor {
   baseDir  file('src/docs/asciidoc')
   outputDir  file('build/docs/html')
-  attributes 'version': '2024.11.15'
+  attributes 'version': new Date().format('yyyy.MM.dd') // for `:revnumber:`
+
 }
 
 // asciidoctorから呼び出され、図等を埋め込む
