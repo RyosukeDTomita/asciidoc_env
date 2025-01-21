@@ -17,7 +17,8 @@
         "oderwat.indent-rainbow",
         "ionutvmi.path-autocomplete",
         "asciidoctor.asciidoctor-vscode",
-        "jebbs.plantuml"
+        "jebbs.plantuml",
+        "ms-vscode.live-server" // html preview
       ]
     }
   }
