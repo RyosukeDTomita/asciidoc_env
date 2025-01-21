@@ -97,4 +97,12 @@ gradle clean
 
 Dev Containerに日本語フォントが入っていないのが原因。[素晴らしいQiita](https://qiita.com/yomon8/items/a3e016b7ffc3e4fbb7e5)
 
+### `JAVA_HOME`のPathがおかしい
+
+dotfiles等で普段使う~/.bashrcなどによって`JAVA_HOME`が上書きされているとgradleがうまく動かなくなる。
+以下で再設定する。
+
+```shell
+export JAVA_HOME=/opt/java/openjdk
+```
 
