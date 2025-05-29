@@ -1,0 +1,56 @@
+@startuml
+!define RECTANGLE class
+
+skinparam backgroundColor #FFFFFF
+skinparam rectangle {
+    BackgroundColor #E1F5FE
+    BorderColor #0277BD
+}
+
+skinparam database {
+    BackgroundColor #FFF3E0
+    BorderColor #F57C00
+}
+
+skinparam cloud {
+    BackgroundColor #E8F5E8
+    BorderColor #388E3C
+}
+
+rectangle "ローカル環境" as Local {
+    rectangle "クライアントアプリ" as ClientApp
+}
+
+rectangle "社内ネットワーク（オンプレミス）" as OnPrem {
+    database "MySQL\n(オンプレ)" as OnPremMySQL
+}
+
+cloud "AWS" as AWS {
+    database "RDS\n(MySQL)" as AWSRDS
+    database "DocumentDB" as DocumentDB
+}
+
+ClientApp -right-> OnPremMySQL : データ更新
+OnPremMySQL -right-> AWSRDS : データ同期
+AWSRDS -down-> DocumentDB : データ移行
+
+note bottom of ClientApp
+  クライアントアプリケーション
+  （Web、モバイルなど）
+end note
+
+note bottom of OnPremMySQL
+  オンプレミスDB
+end note
+
+note bottom of AWSRDS
+  AWS環境の
+  RDSインスタンス
+end note
+
+note bottom of DocumentDB
+  AWSの
+  DocumentDB
+end note
+
+@enduml

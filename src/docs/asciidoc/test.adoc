@@ -24,3 +24,8 @@ include::../diagram/pu/sequence_sample.pu[]
 ----
 include::../diagram/pu/flowchart_sample.pu[]
 ----
+
+[plantuml,component_sample,svg]
+----
+include::../diagram/pu/component_sample.pu[]    
+----
